@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: sans-serif;
+      }
+      section {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        background: #232323;
+        overflow: hidden;
+        padding: 100px 20px;
+      }
+      section::before {
+        content: "";
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: #ef3b36;
+        clip-path: circle(65% at 100% -20%);
+      }
+      section::after {
+        content: "";
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: #47aafa;
+        clip-path: circle(35% at 0% 100%);
+      }
+      .container {
+        position: relative;
+        z-index: 10;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-wrap: wrap;
+      }
+      .container .card {
+        position: relative;
+        width: 300px;
+        height: 400px;
+        margin: 20px 40px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: rgba(255, 255, 255, 0.2);
+        box-shadow: 0 10px 25px rgb(0, 0, 0, 0.05);
+        backdrop-filter: blur(25px);
+      }
+      .container .card .imgBox {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        padding: 20px;
+        transition: 0.5s ease-in-out;
+        transition-delay: 0.3s;
+      }
+      .container .card:hover .imgBox {
+        transform: translateY(-100px);
+      }
+      .container .card .imgBox img {
+        width: 100%;
+        transition: 0.5s ease-in-out;
+        margin: 0 0 20px;
+      }
+      .container .card:hover .imgBox img {
+        transform: translate(-20px, -40px) rotate(20deg) scale(1.4);
+      }
+      .container .card .imgBox h2 {
+        color: #fff;
+        font-weight: 700;
+      }
+      .card .content {
+        position: absolute;
+        bottom: 20px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        transition: 0.3s ease-in-out;
+        opacity: 0;
+        transition-delay: 0.6s;
+        padding: 20px;
+      }
+      .card:hover .content {
+        opacity: 1;
+        margin-bottom: 20px;
+      }
+      .card .content .size,
+      .card .content .color {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 8px 20px;
+      }
+      .card .content .size h3,
+      .card .content .color h3 {
+        color: #fff;
+        font-weight: 300;
+        font-size: 14px;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        margin-right: 10px;
+      }
+      .card .content .size span {
+        width: 26px;
+        height: 26px;
+        background-color: #fff;
+        line-height: 24px;
+        display: inline-block;
+        text-align: center;
+        color: #111;
+        border-radius: 4px;
+        margin: 0 5px;
+        font-weight: 500;
+        transition: 0.5s;
+        cursor: pointer;
+      }
+      .card .content .size span:hover {
+        background: #9bdc28;
+      }
+      .card .content .color span {
+        width: 20px;
+        height: 20px;
+        background-color: #f00;
+        border-radius: 50%;
+        margin: 0 5px;
+        border: 2px solid #fff;
+        cursor: pointer;
+      }
+      .card .content .color span:nth-child(2) {
+        background: #9bdc28;
+      }
+      .card .content .color span:nth-child(3) {
+        background: #47aafa;
+      }
+      .card .content .color span:nth-child(4) {
+        background: #e91e63;
+      }
+      .container .card .content a {
+        position: relative;
+        top: 10px;
+        display: inline-block;
+        padding: 12px 30px;
+        background: #fff;
+        border-radius: 40px;
+        font-weight: 800;
+        text-decoration: none;
+        letter-spacing: 1px;
+        color: #111;
+        text-transform: uppercase;
+      }
+      .container .card .content a:hover {
+        color: #f00;
+      }
+    </style>
+  </head>
+  <body>
+    <section>
+      <div class="container">
+        <div class="card">
+          <div class="imgBox">
+            <img src="./pngimg.com - running_shoes_PNG5782.png" alt="" />
+            <h2>Nike Shoes</h2>
+          </div>
+          <div class="content">
+            <div class="size">
+              <h3>Size :</h3>
+              <span>7</span>
+              <span>8</span>
+              <span>9</span>
+              <span>10</span>
+            </div>
+            <div class="color">
+              <h3>
+                Color :
+              </h3>
+              <span></span>
+              <span></span>
+              <span></span>
+            </div>
+            <a href="#">Buy Now</a>
+          </div>
+        </div>
+        <div class="card">
+          <div class="imgBox">
+            <img src="./pngimg.com - running_shoes_PNG5782.png" alt="" />
+            <h2>Nike Shoes</h2>
+          </div>
+          <div class="content">
+            <div class="size">
+              <h3>Size :</h3>
+              <span>7</span>
+              <span>8</span>
+              <span>9</span>
+              <span>10</span>
+            </div>
+            <div class="color">
+              <h3>
+                Color :
+              </h3>
+              <span></span>
+              <span></span>
+              <span></span>
+            </div>
+            <a href="#">Buy Now</a>
+          </div>
+        </div>
+        <div class="card">
+          <div class="imgBox">
+            <img src="./pngimg.com - running_shoes_PNG5782.png" alt="" />
+            <h2>Nike Shoes</h2>
+          </div>
+          <div class="content">
+            <div class="size">
+              <h3>Size :</h3>
+              <span>7</span>
+              <span>8</span>
+              <span>9</span>
+              <span>10</span>
+            </div>
+            <div class="color">
+              <h3>
+                Color :
+              </h3>
+              <span></span>
+              <span></span>
+              <span></span>
+            </div>
+            <a href="#">Buy Now</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </body>
+</html>
